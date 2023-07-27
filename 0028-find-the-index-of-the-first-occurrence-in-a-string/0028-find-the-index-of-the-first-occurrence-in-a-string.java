@@ -13,10 +13,11 @@ class Solution {
             if(haystack.charAt(i) != needle.charAt(0)){
                 continue;
             }
-            String compare = String.valueOf(haystack.charAt(i));
-            if(needle.equals(compare)){
+            if(needle.equals(String.valueOf(haystack.charAt(i)))){
                 return i;
             }
+            String compare = String.valueOf(haystack.charAt(i));
+
             for(int j=i+1; j<haystack.length(); j++){
                 compare += haystack.charAt(j);
                 if(needle.equals(compare)){
