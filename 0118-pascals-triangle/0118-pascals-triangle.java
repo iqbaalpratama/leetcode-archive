@@ -20,7 +20,6 @@ class Solution {
             int left = 0;
             int right = 1;
             for(int j=2; j<i; j++){
-                // System.out.println(result.get(i-2));
                 newRow.add(result.get(i-2).get(left)+result.get(i-2).get(right));
                 left++;
                 right++;
