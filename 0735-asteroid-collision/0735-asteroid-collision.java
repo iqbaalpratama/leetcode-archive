@@ -14,7 +14,7 @@ class Solution {
                 }else if(i < 0 && asteroid.peek() > 0 && -1 * i > asteroid.peek()){
                     asteroid.pop();
                     flag = true;
-                }else if( -1*i == asteroid.peek()){
+                }else if(i+asteroid.peek()==0){
                     asteroid.pop();
                     flag = false;
                     break;
