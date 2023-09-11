@@ -23,7 +23,6 @@ class Solution {
             }        
         }
         if(sumRight == sumLeft && left == right){
-            System.out.println(sumLeft);
             return left+1;
         }else{
             return -1;
