@@ -1,7 +1,5 @@
 class RecentCounter {
     
-    private int up;
-    private int down;
     private List<Integer> counters;
 
     public RecentCounter() {
@@ -9,12 +7,10 @@ class RecentCounter {
     }
     
     public int ping(int t) {
-        up = t-3000;
-        down = t;
         counters.add(t);
         Long result = counters
           .stream()
-          .filter(c -> c>=up && c<=down )
+          .filter(c -> c>=t-3000 && c<=t )
           .count();
         return result.intValue();
     }
