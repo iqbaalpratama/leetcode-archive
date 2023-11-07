@@ -1,8 +1,11 @@
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
-SET N = N-1;
   RETURN (
-        SELECT DISTINCT(salary) from Employee order by salary DESC
-        LIMIT 1 OFFSET N
+    SELECT distinct rank_salary.salary
+    FROM (
+        SELECT *, DENSE_RANK() OVER(ORDER BY salary DESC) as ranking
+        FROM employee
+    ) AS rank_salary
+    WHERE rank_salary.ranking = N
   );
 END
