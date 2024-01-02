@@ -26,9 +26,7 @@ class Solution {
         }
         int count = 0;
         for(int i=0; i<n; i++){
-            if(mappedPair.containsKey(colWord[i].toString())){
-                count += mappedPair.get(colWord[i].toString());
-            }
+            count += mappedPair.getOrDefault(colWord[i].toString(),0);
         }
         return count;
     }
